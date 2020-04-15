@@ -2,7 +2,7 @@
  * main.cpp
  *
  *  Created on: Apr 10, 2020
- *      Author: Mileena
+ *      Author: sandrogiannini
  */
 
 #include "Image.h"
