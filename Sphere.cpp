@@ -11,13 +11,22 @@ Sphere::Sphere() {
 
 	radius = 0;
 	center = Vector3d(0,0,0);
+	texture = false;
+	reflection = true;
+	fuzziness = 0.9;
+	movement = Vector3d(0,0,0);
 
 }
 
-Sphere::Sphere(float x, float y, float z, double r) {
+Sphere::Sphere(Vector3d s, Vector3d c,  double r) {
 
 	radius = r;
-	center = Vector3d(x,y,z);
+	center = s;
+	color = c;
+	texture = false;
+	reflection = true;
+	fuzziness = 0.5;
+	movement = Vector3d(0,0,0);
 
 }
 
@@ -48,3 +57,38 @@ Sphere::setCenter(Vector3d c){
 
 }
 
+bool
+Sphere::isTexture(){
+	return texture;
+}
+
+double
+Sphere::getFuzziness(){
+	return fuzziness;
+}
+
+void Sphere::setFuzziness(double fuzziness) {
+	this->fuzziness = fuzziness;
+}
+
+bool
+Sphere::isReflection(){
+	return reflection;
+}
+
+void
+Sphere::setReflection(bool reflection) {
+	this->reflection = reflection;
+}
+
+void
+Sphere::setTexture(bool texture) {
+	this->texture = texture;
+}
+
+void
+Sphere::move(){
+
+	center = center + movement;
+
+}

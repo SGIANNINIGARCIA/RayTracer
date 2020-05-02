@@ -25,22 +25,27 @@ Ray::~Ray() {
 	// TODO Auto-generated destructor stub
 }
 
-const Vector3d&
-Ray::getDestinationVector() const {
+ Vector3d&
+Ray::getDestinationVector()  {
 	return destinationVector;
 }
 
 void
-Ray::setDestinationVector(const Vector3d &destinationVector) {
+Ray::setDestinationVector( Vector3d &destinationVector) {
 	this->destinationVector = destinationVector;
 }
 
-const Vector3d&
-Ray::getOriginVector() const {
+ Vector3d&
+Ray::getOriginVector()  {
 	return originVector;
 }
 
 void
-Ray::setOriginVector(const Vector3d &originVector) {
+Ray::setOriginVector( Vector3d &originVector) {
 	this->originVector = originVector;
+}
+
+Vector3d
+Ray::pointAtParameter(float t){
+	return originVector + ( destinationVector * t);
 }

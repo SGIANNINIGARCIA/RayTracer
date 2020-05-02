@@ -15,15 +15,24 @@
 #include "Vector3d.h"
 #include "Ray.h"
 #include "Sphere.h"
+#include "Light.h"
+#include "ClosesHit.h"
+#include "Camera.h"
 
 class Image {
 private:
 
 	Vector3d pixel[ROWS][COLUMNS];
-	Vector3d calculatePixelColor(Ray, double);
+	std::vector<Sphere> spheres;
+	std::vector<Light> lights;
+	Vector3d calculatePixelColor(Ray, double, int);
 	Sphere circle;
-
-	bool rayHitsSphere(Ray);
+	Light light;
+	void setUp();
+	bool rayHitsSphere(Ray&, ClosesHit&);
+	bool generateBrightTexture(ClosesHit&, Ray);
+	Vector3d randomeCubeNumber();
+	double randomNumber();
 
 public:
 

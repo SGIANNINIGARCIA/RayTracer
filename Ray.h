@@ -19,10 +19,11 @@ public:
 	Ray(Vector3d, Vector3d);
 	Ray();
 	virtual ~Ray();
-	const Vector3d& getDestinationVector() const;
-	void setDestinationVector(const Vector3d &destinationVector);
-	const Vector3d& getOriginVector() const;
-	void setOriginVector(const Vector3d &originVector);
+	 Vector3d& getDestinationVector() ;
+	void setDestinationVector( Vector3d &destinationVector);
+	 Vector3d& getOriginVector() ;
+	void setOriginVector( Vector3d &originVector);
+	Vector3d pointAtParameter(float t);
 };
 
 #endif /* RAY_H_ */
